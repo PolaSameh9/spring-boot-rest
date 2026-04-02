@@ -57,10 +57,18 @@ public class JobService {
 
 
             new JobPost(5, "Mobile App Developer", "Experience in mobile app development for iOS and Android", 3,
-                    List.of("iOS Development", "Android Development", "Mobile App"))
+                    List.of("iOS Development", "Android Development", "Mobile App")),
+
+
+            new JobPost(6, "Backend Developer", "Develop and maintain RESTful APIs using Spring Boot and microservices architecture", 3,
+                    List.of("Java", "Spring Boot", "REST API", "Microservices"))
             ));
 
             repo.saveAll(jobs);
+    }
+
+    public List<JobPost> search(String keyword) {
+        return repo.findByPostProfileContainingOrPostDescContaining(keyword, keyword);
     }
 
 }
