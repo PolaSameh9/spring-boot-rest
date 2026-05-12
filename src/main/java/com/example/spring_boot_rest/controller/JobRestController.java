@@ -1,4 +1,4 @@
-package com.example.spring_boot_rest;
+package com.example.spring_boot_rest.controller;
 
 import java.util.List;
 
